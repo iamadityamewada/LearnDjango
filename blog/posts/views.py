@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 posts = [
     {
@@ -29,7 +30,9 @@ posts = [
     }
 ]
 
-def home(request):
+def home(request,name):
+    
+    print(reverse('home',args = [name]))
     html= ""
     for post in posts:
         html += f'''<div>
@@ -52,3 +55,6 @@ def post(request, id):
      return HttpResponse(html)
     else:
      return HttpResponseNotFound("Post Not Found Error(404)")
+    
+def google(request, id):
+      return HttpResponseRedirect(f"/posts/{id}/")
