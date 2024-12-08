@@ -6,6 +6,17 @@
     <title>Blog Verse</title>
 </head>
 <body>
-    <h1>Welcome {{posts}} </h1>
+    
+     
+       {% for post in posts %}
+         <h2>{{forloop.counter}}. {{post.title}}</h2>
+         <p>{{post.content}}</p>
+       {% empty %}
+        <h1>No Post Available</h1>  
+       {% endfor %}
+   
+        
+   
+     
 </body>
 </html>
