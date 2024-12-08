@@ -1,0 +1,46 @@
+installation
+open cmd 
+py -m pip install Django  // to install Django
+django-admin // return django-admin subcommand
+
+// creating new django project
+django-admin startproject project_name
+
+
+struture of django project 
+
+manage.py :- to give commands related to our django project
+    ex related to server or databases 
+
+blog :- 
+    __init__.py --
+       An empty file that tells Python that this directory should
+       be consider a Python package
+
+    setting.py -- 
+      contains all the setting for django project
+
+    urls.py --
+      contains all urls for this django project 
+
+
+
+
+commands:-
+  run the server -- python manage.py runserver 
+  run server on port -- python manage.py runserver 1313 
+  create app -- python manage.py startapp appname 
+
+
+Crucial topic 
+Apps   seperate functionality , reusablity 
+urls and view -
+  urls - url of site ex home page -- home/
+  views - views handle request and return response - uses function and class 
+        - contains logic needed return a response 
+        - creating view by function - 
+                                      def helloWorld(request):
+                                           return HttpResponse("helloWorld")
+
+dynamic url use <param> in required another parameter as name same as param
+type of can be changed using <int: param>
