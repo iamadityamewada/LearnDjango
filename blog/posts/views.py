@@ -30,9 +30,9 @@ posts = [
     }
 ]
 
-def home(request,name):
+def home(request):
     
-    print(reverse('home',args = [name]))
+    # print(reverse('home'))
     html= ""
     for post in posts:
         html += f'''<div>
@@ -40,7 +40,8 @@ def home(request,name):
               <h1>{post["id"]} - {post["title"]},</h1></a>
               <p>{post["content"]}</p>
         </div>'''
-    return HttpResponse(html)
+    # return HttpResponse(html)
+    return render(request, "posts/home.html", {"posts":posts})
 
 def post(request, id):
     html = ""
@@ -57,4 +58,5 @@ def post(request, id):
      return HttpResponseNotFound("Post Not Found Error(404)")
     
 def google(request, id):
-      return HttpResponseRedirect(f"/posts/{id}/")
+      url = reverse("post", args = [id])
+      return HttpResponseRedirect(url)
