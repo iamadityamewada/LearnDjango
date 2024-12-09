@@ -31,29 +31,28 @@ posts = [
 ]
 
 def home(request):
-    
     # print(reverse('home'))
-    html= ""
-    for post in posts:
-        html += f'''<div>
-              <a href= ../{post["id"]} >
-              <h1>{post["id"]} - {post["title"]},</h1></a>
-              <p>{post["content"]}</p>
-        </div>'''
+    # html= ""
+    # for post in posts:
+    #     html += f'''<div>
+    #           <a href= ../{post["id"]} >
+    #           <h1>{post["id"]} - {post["title"]},</h1></a>
+    #           <p>{post["content"]}</p>
+    #     </div>'''
     # return HttpResponse(html)
     return render(request, "posts/home.html", {"posts":posts})
 
 def post(request, id):
-    html = ""
+    # html = ""
     valid_id = False
     for post in posts:
         if id == post["id"]:
-            html=f'''<h1>{post["id"]} {post["title"]}</h1>
-                      <p>{post["content"]}<p>'''
+            # html=f'''<h1>{post["id"]} {post["title"]}</h1>
+            #           <p>{post["content"]}<p>'''
             valid_id = True
             break
     if(valid_id):    
-     return HttpResponse(html)
+     return render(request, "posts/post.html", {"post":post})
     else:
      return HttpResponseNotFound("Post Not Found Error(404)")
     
