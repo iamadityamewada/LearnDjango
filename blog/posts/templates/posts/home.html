@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}BlogVerse{% endblock title %}
-{% block css %} <link rel="stylesheet" href="{% static '/posts/home.css' %}">{% endblock css %}
+<!-- {% block css %} <link rel="stylesheet" href="{% static '/posts/home.css' %}">{% endblock css %} -->
 {% block body %}
     {% for post in posts %}
     <a href="{% url "post" post.id %}"><h1>{{forloop.counter}}. {{post.title}}</h1></a>
