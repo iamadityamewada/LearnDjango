@@ -60,5 +60,5 @@ def google(request, id):
       url = reverse("post", args = [id])
       return HttpResponseRedirect(url)
 
-def global1(request):
-   return render(request , "global.html")
+# def global1(request):
+#    return render(request , "global.html")

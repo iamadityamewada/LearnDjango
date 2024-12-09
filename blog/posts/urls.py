@@ -5,5 +5,5 @@ urlpatterns =[
     path('home/', views.home , name="home"),
     path('<int:id>/' , views.post, name = "post" ),
     path('g/<int:id>/', views.google),
-    path('global/', views.global1)
+    # path('global/', views.global1)
 ]
