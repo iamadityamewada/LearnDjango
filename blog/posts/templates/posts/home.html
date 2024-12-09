@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Verse</title>
-</head>
-<body>
-    
-     
-       {% for post in posts %}
-         <a href="{% url "post" post.id %}"><h1>{{forloop.counter}}. {{post.title}}</h1></a>
-         <p>{{post.content|truncatewords:3}}</p>
-       {% empty %}
-        <h1>No Post Available</h1>  
-       {% endfor %}
+{% extends 'base.html' %}
+
+{% block title %}BlogVerse{% endblock title %}
+
+{% block body %}
+    {% for post in posts %}
+    <a href="{% url "post" post.id %}"><h1>{{forloop.counter}}. {{post.title}}</h1></a>
+    <p>{{post.content|truncatewords:3}}</p>
+    {% empty %}
+    <h1>No Post Available</h1>  
+    {% endfor %}
+{% endblock body %}
+
    
-        
-   
-     
-</body>
-</html>
