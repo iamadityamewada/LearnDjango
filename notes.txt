@@ -1,4 +1,4 @@
-installation
+installation 
 open cmd 
 py -m pip install Django  // to install Django
 django-admin // return django-admin subcommand
@@ -39,8 +39,8 @@ urls and view -
   views - views handle request and return response - uses function and class 
         - contains logic needed return a response 
         - creating view by function - 
-                                      def helloWorld(request):
+                                      d3ef helloWorld(request):
                                            return HttpResponse("helloWorld")
 
 dynamic url use <param> in required another parameter as name same as param
-type of can be changed using <int: param>
+type of can be changed using <int: param> 

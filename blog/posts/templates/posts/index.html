@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}BlogVerse{% endblock title %}
+<!-- {% block css %} <link rel="stylesheet" href="{% static '/posts/home.css' %}">{% endblock css %} -->
+{% block body %}
+<div class="container mt-5">
+  <div class="row">
+    {% for post in posts %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.content | truncatewords:15}}</p>
+              <a href="{% url "post" post.id %}" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div> 
+    {% empty %}
+    <h1>No Post Available</h1> 
+    {% endfor %}
+  </div>
+</div>  
+{% endblock body %}
+
