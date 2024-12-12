@@ -44,3 +44,30 @@ urls and view -
 
 dynamic url use <param> in required another parameter as name same as param
 type of can be changed using <int: param> 
+
+// building project command
+django-admin startproject project_name
+python manage.py startapp appname
+
+pass template path to dirs in setting os.path.join(BASE_DIR "templates")
+
+
+data base and model
+
+install
+postgress // database 
+pgadmin // interface tool for postgresql
+psycopg2 // pip instal psycogpg for connectivity btw Django and postgres
+
+pillow // for image upload pip install pillow
+
+config database in setting 
+then create model in models.py
+
+run command
+python manage.py 
+python manage.py sqlmigrate ttapp 0001 
+python manage.py makemigrations
+python manage.py migrate 
+
+
